@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Housekeeping Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Room Maintenance Dashboard</h1>
+    <p>Manage rooms, cleaning and maintenance</p>
+</header>
+
+<nav>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#rooms">Room Status</a>
+    <a href="#tasks">Cleaning Tasks</a>
+    <a href="#add">Add Room</a>
+</nav>
+
+<main id="dashboard">
+    <h2>Dashboard Overview</h2>
+
+    <section class="cards">
+        <div class="card">
+            <h3>Total Rooms</h3>
+            <p id="total">0</p>
+        </div>
+        <div class="card">
+            <h3>Ready Rooms</h3>
+            <p id="ready">0</p>
+        </div>
+        <div class="card">
+            <h3>Cleaning</h3>
+            <p id="cleaning">0</p>
+        </div>
+        <div class="card">
+            <h3>Maintenance</h3>
+            <p id="maintenance">0</p>
+        </div>
+    </section>
+
+    <section class="panel">
+        <h2>Priority Overview</h2>
+        <div id="priorityList"></div>
+    </section>
+
+    <section class="panel" id="rooms">
+        <h2>Room Status</h2>
+
+        <input type="text" id="search"
+               placeholder="Search room number">
+
+        <select id="filter">
+            <option value="All">All Statuses</option>
+            <option>Ready</option>
+            <option>Needs Cleaning</option>
+            <option>Cleaning</option>
+            <option>Inspection</option>
+            <option>Maintenance</option>
+        </select>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Room</th>
+                        <th>Checkout / Guest</th>
+                        <th>Status</th>
+                        <th>Priority</th>
+                        <th>Staff</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+                <tbody id="roomTable"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="panel" id="tasks">
+        <h2>Cleaning Assignments</h2>
+        <div id="taskList"></div>
+    </section>
+
+    <section class="panel" id="add">
+        <h2>Add / Update Room</h2>
+
+        <form id="roomForm">
+            <label>Room Number</label>
+            <input type="text" id="roomNumber"
+                   placeholder="Enter room number" required>
+
+            <label>Guest / Checkout Details</label>
+            <input type="text" id="guest"
+                   placeholder="Enter checkout details">
+
+            <label>Room Status</label>
+            <select id="roomStatus">
+                <option>Needs Cleaning</option>
+                <option>Cleaning</option>
+                <option>Inspection</option>
+                <option>Ready</option>
+                <option>Maintenance</option>
+            </select>
+
+            <label>Priority</label>
+            <select id="priority">
+                <option>Normal</option>
+                <option>High</option>
+                <option>Urgent</option>
+            </select>
+
+            <label>Assigned Staff</label>
+            <input type="text" id="staff"
+                   placeholder="Enter staff name">
+
+            <button type="submit">Save Room</button>
+        </form>
+        <p id="message"></p>
+    </section>
+</main>
+
+<footer>
+    <p>Hotel Housekeeping Management System</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
